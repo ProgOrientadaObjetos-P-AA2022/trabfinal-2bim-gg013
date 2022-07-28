@@ -4,12 +4,15 @@
  */
 package trabajofinal;
 
+import Enlaces.EnlacePlanPostPagoMegas;
+import Enlaces.EnlacePlanPostPagoMinutos;
+import Enlaces.EnlacePlanPostPagoMinutosMegas;
+import Enlaces.EnlacePlanPostPagoMinutosMegasEconomico;
 import java.util.Scanner;
 import Planes.PlanPostPagoMinutos;
 import Planes.PlanPostPagoMegas;
 import Planes.PlanPostPagoMinutosMegas;
 import Planes.PlanPostPagoMinutosMegasEconomico;
-import java.util.ArrayList;
 import java.util.Locale;
 
 /**
@@ -27,19 +30,25 @@ public class Ejecutor {
         Scanner sc = new Scanner(System.in);
         sc.useLocale(Locale.US);
 
-        ArrayList<PlanCelular> lista = new ArrayList<>();
         PlanPostPagoMinutos p1;
         PlanPostPagoMegas p2;
         PlanPostPagoMinutosMegas p3;
         PlanPostPagoMinutosMegasEconomico p4;
+
         boolean bandera = true;
         int opcion;
+
         String nombreUsuario = "";
         String cedula = "";
         String ciudad = "";
         String marca = "";
         String modelo = "";
         String numero = "";
+
+        EnlacePlanPostPagoMinutos enlace1 = new EnlacePlanPostPagoMinutos();
+        EnlacePlanPostPagoMegas enlace2 = new EnlacePlanPostPagoMegas();
+        EnlacePlanPostPagoMinutosMegas enlace3 = new EnlacePlanPostPagoMinutosMegas();
+        EnlacePlanPostPagoMinutosMegasEconomico enlace4 = new EnlacePlanPostPagoMinutosMegasEconomico();
 
         while (bandera) {
             opcion = Interfaz();
@@ -67,41 +76,55 @@ public class Ejecutor {
             System.out.println("---------------------------------------------");
 
             switch (opcion) {
-
                 case 1:
                     p1 = PlanPostPagoMinutos(nombreUsuario, cedula, ciudad,
                             marca, modelo, numero);
                     p1.establecerPagoMensual();
-                    lista.add(p1);
-                    
+                    enlace1.insertarPlan(p1);
                     break;
 
                 case 2:
                     p2 = PlanPostPagoMegas(nombreUsuario, cedula, ciudad, marca,
                             modelo, numero);
                     p2.establecerPagoMensual();
-                    lista.add(p2);
-                    
+                    enlace2.insertarPlan(p2);
                     break;
 
                 case 3:
                     p3 = PlanPostPagoMinutosMegas(nombreUsuario, cedula, ciudad,
                             marca, modelo, numero);
                     p3.establecerPagoMensual();
-                    lista.add(p3);
-                    
+                    enlace3.insertarPlan(p3);
                     break;
 
                 case 4:
-                    p4 = PlanPostPagoMegasEconomico(nombreUsuario, cedula, 
+                    p4 = PlanPostPagoMegasEconomico(nombreUsuario, cedula,
                             ciudad, marca, modelo, numero);
                     p4.establecerPagoMensual();
-                    lista.add(p4);
-                    
+                    enlace4.insertarPlan(p4);
                     break;
-
                 case 5:
+                    for (int i = 0; i < enlace1.obtenerDataPlan().size(); i++) {
+                        System.out.printf("%s", enlace1.obtenerDataPlan().get(i));
+                    }
+                    
+                    System.out.println("");
 
+                    for (int i = 0; i < enlace2.obtenerDataPlan().size(); i++) {
+                        System.out.printf("%s", enlace2.obtenerDataPlan().get(i));
+                    }
+
+                    System.out.println("");
+                    
+                    for (int i = 0; i < enlace3.obtenerDataPlan().size(); i++) {
+                        System.out.printf("%s", enlace3.obtenerDataPlan().get(i));
+                    }
+
+                    System.out.println("");
+                    
+                    for (int i = 0; i < enlace4.obtenerDataPlan().size(); i++) {
+                        System.out.printf("%s", enlace4.obtenerDataPlan().get(i));
+                    }
                     break;
 
                 case 6:
@@ -110,8 +133,8 @@ public class Ejecutor {
                     bandera = false;
                     break;
             }
-
         }
+
     }
 
     public static int Interfaz() {
@@ -172,7 +195,7 @@ public class Ejecutor {
     }
 
     public static PlanPostPagoMegas PlanPostPagoMegas(String nombreUsuario,
-            String cedula, String ciudad, String marca, String modelo, 
+            String cedula, String ciudad, String marca, String modelo,
             String numero) {
 
         Scanner sc = new Scanner(System.in);

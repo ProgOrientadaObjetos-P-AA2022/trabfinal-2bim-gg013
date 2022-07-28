@@ -10,7 +10,7 @@ import trabajofinal.PlanCelular;
  *
  * @author Usuario iTC
  */
-public class PlanPostPagoMegas extends PlanCelular {
+public class PlanPostPagoMegas extends PlanCelular { 
 
     private int megasEnGigas;
     private double costoGiga;
@@ -19,6 +19,7 @@ public class PlanPostPagoMegas extends PlanCelular {
     public PlanPostPagoMegas(int d, double c, double t,
             String n, String ced, String ciud, String mar, String mod,
             String num) {
+        //Nombre, Cedula, Ciudad, Marca, Modelo, Numero
         super(n, ced, ciud, mar, mod, num);
 
         megasEnGigas = d;
