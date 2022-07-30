@@ -21,7 +21,7 @@ public class EnlacePlanPostPagoMegas {
     public void establecerConexion() {  
 
         try {  
-            String url = "jdbc:sqlite:bd/base02.db";
+            String url = "jdbc:sqlite:bd/base01.db";
             conn = DriverManager.getConnection(url);
         } catch (SQLException e) {  
             System.out.println(e.getMessage());  

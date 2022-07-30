@@ -106,24 +106,32 @@ public class Ejecutor {
                 case 5:
                     for (int i = 0; i < enlace1.obtenerDataPlan().size(); i++) {
                         System.out.printf("%s", enlace1.obtenerDataPlan().get(i));
+                        System.out.println("********************************"
+                                + "********************************");
                     }
                     
                     System.out.println("");
 
                     for (int i = 0; i < enlace2.obtenerDataPlan().size(); i++) {
                         System.out.printf("%s", enlace2.obtenerDataPlan().get(i));
+                        System.out.println("********************************"
+                                + "********************************");
                     }
 
                     System.out.println("");
                     
                     for (int i = 0; i < enlace3.obtenerDataPlan().size(); i++) {
                         System.out.printf("%s", enlace3.obtenerDataPlan().get(i));
+                        System.out.println("********************************"
+                                + "********************************");
                     }
 
                     System.out.println("");
                     
                     for (int i = 0; i < enlace4.obtenerDataPlan().size(); i++) {
                         System.out.printf("%s", enlace4.obtenerDataPlan().get(i));
+                    System.out.println("********************************"
+                                + "********************************");
                     }
                     break;
 
@@ -205,7 +213,7 @@ public class Ejecutor {
         System.out.println("A Continuacion Se van a asignar los datos para crear"
                 + " un nuevo Plan Post Pago Megas");
         System.out.println("---------------------------------------------");
-        System.out.println("Ingrese la cantidad de megas");
+        System.out.println("Ingrese la cantidad de Gigas");
         int cantidadMegas = sc.nextInt();
         System.out.println("Ingrese el valor del precio de los Gigas");
         double precioGigas = sc.nextDouble();
@@ -233,7 +241,7 @@ public class Ejecutor {
         int minutos = sc.nextInt();
         System.out.println("Ingrese el valor del costo de los minutos");
         double costoMinutos = sc.nextDouble();
-        System.out.println("Ingrese la cantidad de Megas");
+        System.out.println("Ingrese la cantidad de Gigas");
         int cantidadMegas = sc.nextInt();
         System.out.println("Ingrese el precio del Giga");
         double precioGiga = sc.nextDouble();
@@ -260,7 +268,7 @@ public class Ejecutor {
         int minutos = sc.nextInt();
         System.out.println("Ingrese el valor del costo de los minutos");
         double costoMinutos = sc.nextDouble();
-        System.out.println("Ingrese la cantidad de Megas");
+        System.out.println("Ingrese la cantidad de Gigas");
         int cantidadMegas = sc.nextInt();
         System.out.println("Ingrese el precio del Giga");
         double precioGiga = sc.nextDouble();
